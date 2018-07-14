@@ -1,4 +1,4 @@
-import { doSomething, doNothing } from "../actions";
+import { doSomething, doSomethingOver } from "../actions";
 import { TO_DO_SOMETHING } from "../constants/action-types";
 
 const doSomethingMiddleware = ({ dispatch }) => next => action => {
@@ -12,7 +12,7 @@ const doSomethingMiddleware = ({ dispatch }) => next => action => {
 
   //wait for sometime, and then do nothing!
   setTimeout(() => {
-    dispatch(doNothing());
+    dispatch(doSomethingOver());
   }, action.payload || 3000);
 };
 

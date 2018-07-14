@@ -1,7 +1,7 @@
 import {
   TO_DO_SOMETHING,
   DO_SOMETHING,
-  DO_NOTHING
+  DO_SOMETHING_OVER
 } from "../constants/action-types";
 
 export const todoSomething = duration => ({
@@ -9,8 +9,8 @@ export const todoSomething = duration => ({
   payload: duration
 });
 
-export const doNothing = () => ({
-  type: DO_NOTHING
+export const doSomethingOver = () => ({
+  type: DO_SOMETHING_OVER
 });
 
 export const doSomething = () => ({
