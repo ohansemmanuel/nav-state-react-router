@@ -1,6 +1,6 @@
 import { DO_SOMETHING, DO_NOTHING } from "../constants/action-types";
 
-export default function(state, action) {
+export default function(state = {}, action) {
   switch (action.type) {
     case DO_SOMETHING:
       return {

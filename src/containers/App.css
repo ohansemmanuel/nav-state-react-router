@@ -1,28 +1,49 @@
-.App {
-  text-align: center;
+/* App styles */
+
+.EmojiLand {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.EmojiLand > * {
+  align-self: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.EmojiLand__btn {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  border-radius: 44.5px;
+  width: 377px;
+  height: 89px;
+  border: 0;
+  outline: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+.EmojiLand__btn:focus {
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.App-intro {
-  font-size: large;
+.EmojiLand__loader {
+  width: 15px;
+  height: 15px;
+  margin: 0 0.5rem;
+  border: 5px solid rgba(189, 189, 189, 0.25);
+  border-left-color: rgba(3, 155, 229, 1);
+  border-top-color: rgba(3, 155, 229, 1);
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotate 600ms infinite linear;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
 }

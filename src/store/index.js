@@ -1,5 +1,7 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import reducer from "../reducers";
-const store = createStore(reducer);
+import doSomethingMiddleware from "../middlewares/doSomething";
+
+const store = createStore(reducer, applyMiddleware(doSomethingMiddleware));
 
 export default store;

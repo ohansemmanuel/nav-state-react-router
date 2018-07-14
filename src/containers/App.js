@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/angry" component={AngryDude} />
+          <Route path="/" component={AngryDude} />
           <Route path="/quiet" component={KeepQuiet} />
           <Route path="/smile" component={SmileLady} />
           <Route path="/think" component={ThinkHard} />
