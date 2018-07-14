@@ -1,6 +1,6 @@
 import { DO_SOMETHING, DO_SOMETHING_OVER } from "../constants/action-types";
 
-export default function(state = {}, action) {
+export default function(state = { appState: "" }, action) {
   switch (action.type) {
     case DO_SOMETHING:
       return {

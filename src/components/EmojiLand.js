@@ -1,5 +1,6 @@
 import React from "react";
-import { DO_SOMETHING } from "../constants/action-types";
+import { Redirect } from "react-router-dom";
+import { DO_SOMETHING, DO_SOMETHING_OVER } from "../constants/action-types";
 
 const EmojiLand = ({
   EmojiBg,
@@ -8,7 +9,9 @@ const EmojiLand = ({
   HandleEmojiAction,
   appState
 }) => {
-  return (
+  return appState === DO_SOMETHING_OVER ? (
+    <Redirect to="/smile" />
+  ) : (
     <section className="EmojiLand" style={{ background: EmojiBg }}>
       <img src={EmojiImg} className="EmojiLand__img" alt="Emoji" />
       <button onClick={HandleEmojiAction} className="EmojiLand__btn">
