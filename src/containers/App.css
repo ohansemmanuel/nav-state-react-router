@@ -41,6 +41,10 @@
   display: inline-block;
   animation: rotate 600ms infinite linear;
 }
+.EmojiLand__highlight {
+  background: yellow;
+  color: black;
+}
 
 @keyframes rotate {
   to {

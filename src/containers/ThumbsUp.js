@@ -5,7 +5,7 @@ import thumbsUpImg from "../Images/thumbsup.png";
 import { DO_SOMETHING_OVER } from "../constants/action-types";
 import emojiLand from "./emojiLand";
 
-const ThumbsUp = ({ appState, handleEmojiAction }) => {
+const ThumbsUp = ({ appState, handleEmojiAction, location }) => {
   return appState === DO_SOMETHING_OVER ? (
     <Redirect push to="/quiet" />
   ) : (
@@ -15,6 +15,7 @@ const ThumbsUp = ({ appState, handleEmojiAction }) => {
       EmojiBtnText="You rock. Thumbs up!"
       HandleEmojiAction={handleEmojiAction}
       appState={appState}
+      locationState={location.state}
     />
   );
 };

@@ -7,7 +7,17 @@ import emojiLand from "./emojiLand";
 
 const AngryDude = ({ appState, handleEmojiAction }) => {
   return appState === DO_SOMETHING_OVER ? (
-    <Redirect push to="/thumbs" />
+    <Redirect
+      push
+      to={{
+        pathname: "/thumbs",
+        state: {
+          humanType: "Cat Person",
+          age: 12,
+          sex: "none"
+        }
+      }}
+    />
   ) : (
     <EmojiLand
       EmojiBg="linear-gradient(-180deg, #611A51 0%, #10096D 100%)"
