@@ -5,6 +5,7 @@ import {
 } from "../constants/action-types";
 
 export default function(state = { appState: "" }, action) {
+  console.log("Action =========> ", action);
   switch (action.type) {
     case DO_SOMETHING:
       return {
