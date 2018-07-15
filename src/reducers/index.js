@@ -1,4 +1,8 @@
-import { DO_SOMETHING, DO_SOMETHING_OVER } from "../constants/action-types";
+import {
+  DO_SOMETHING,
+  DO_SOMETHING_OVER,
+  DO_NOTHING
+} from "../constants/action-types";
 
 export default function(state = { appState: "" }, action) {
   switch (action.type) {
@@ -9,6 +13,10 @@ export default function(state = { appState: "" }, action) {
     case DO_SOMETHING_OVER:
       return {
         appState: DO_SOMETHING_OVER
+      };
+    case DO_NOTHING:
+      return {
+        appState: DO_NOTHING
       };
     default:
       return state;
