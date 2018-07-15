@@ -26,7 +26,7 @@ function emojiLand(EmojiComponent) {
         self.setState({
           appState: DO_SOMETHING_OVER
         });
-      }, 3000);
+      }, 1000);
     };
 
     render() {
