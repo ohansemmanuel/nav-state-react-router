@@ -1,32 +1,22 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { Redirect } from "react-router-dom";
 import EmojiLand from "../components/EmojiLand";
-import { todoSomething } from "../actions";
 import keepQuietImg from "../Images/keepquiet.png";
+import emojiLand from "./emojiLand";
+import { DO_SOMETHING_OVER } from "../constants/action-types";
 
-class KeepQuiet extends Component {
-  _handleEmojiAction = () => {
-    this.props.todoSomething(3000);
-  };
+const KeepQuiet = ({ appState, handleEmojiAction }) => {
+  return appState === DO_SOMETHING_OVER ? (
+    <Redirect push to="/excited" />
+  ) : (
+    <EmojiLand
+      EmojiBg="linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)"
+      EmojiImg={keepQuietImg}
+      EmojiBtnText="Keep Calm and Stay Quiet."
+      HandleEmojiAction={handleEmojiAction}
+      appState={appState}
+    />
+  );
+};
 
-  render() {
-    return (
-      <EmojiLand
-        EmojiBg="linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)"
-        EmojiImg={keepQuietImg}
-        EmojiBtnText="Keep Calm and Stay Quiet."
-        HandleEmojiAction={this._handleEmojiAction}
-        appState={this.props.appState}
-      />
-    );
-  }
-}
-
-const mapStateToProps = ({ appState }) => ({
-  appState
-});
-
-export default connect(
-  mapStateToProps,
-  { todoSomething }
-)(KeepQuiet);
+export default emojiLand(KeepQuiet);

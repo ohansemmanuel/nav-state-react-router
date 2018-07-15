@@ -1,32 +1,22 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { Redirect } from "react-router-dom";
 import EmojiLand from "../components/EmojiLand";
-import { todoSomething } from "../actions";
 import thinkHardImg from "../Images/thinkhard.png";
+import emojiLand from "./emojiLand";
+import { DO_SOMETHING_OVER } from "../constants/action-types";
 
-class ThinkHard extends Component {
-  _handleEmojiAction = () => {
-    this.props.todoSomething(3000);
-  };
+const ThinkHard = ({ appState, handleEmojiAction }) => {
+  return appState === DO_SOMETHING_OVER ? (
+    <Redirect push to="/smile" />
+  ) : (
+    <EmojiLand
+      EmojiBg="linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%)"
+      EmojiImg={thinkHardImg}
+      EmojiBtnText="But why? Think hard . . ."
+      HandleEmojiAction={handleEmojiAction}
+      appState={appState}
+    />
+  );
+};
 
-  render() {
-    return (
-      <EmojiLand
-        EmojiBg="linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%)"
-        EmojiImg={thinkHardImg}
-        EmojiBtnText="Thinking hard . . ."
-        HandleEmojiAction={this._handleEmojiAction}
-        appState={this.props.appState}
-      />
-    );
-  }
-}
-
-const mapStateToProps = ({ appState }) => ({
-  appState
-});
-
-export default connect(
-  mapStateToProps,
-  { todoSomething }
-)(ThinkHard);
+export default emojiLand(ThinkHard);
